@@ -46,5 +46,14 @@ namespace mslearn_tailspin_spacegame_web
             // Verify that each score's game region matches the provided game region.
             Assert.That(scores, Is.All.Matches<Score>(score => score.GameRegion == gameRegion));
         }
+        [Test]
+        public void FetchOnlyRequestedGameRegionAll()
+        {
+            FetchOnlyRequestedGameRegion("Milky Way");
+            FetchOnlyRequestedGameRegion("Andromeda");
+            FetchOnlyRequestedGameRegion("Pinwheel");
+            FetchOnlyRequestedGameRegion("NGC 1300");
+            FetchOnlyRequestedGameRegion("Messier 82");
+        }
     }
 }
